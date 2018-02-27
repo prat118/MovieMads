@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-navbar color="danger">
+    <ion-title>
+      MovieMads
+    </ion-title>
+    <ion-buttons end>
+        <button ion-button iocn-only (click)="presentPopOver()"><ion-icon name="more"></ion-icon></button>
+      </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding outline>
+
+    <ion-item>
+        <ion-label floating> Search for Movie </ion-label>
+        <ion-input type="text" (input)="searchMovie($event, searchKey)"> </ion-input>
+    </ion-item>
+
+    <ion-list>
+      <ion-item *ngFor="let movie of movies" (click)="selectMovie($event, movie)">
+        <ion-avatar item-left>
+          <img src="https://image.tmdb.org/t/p/w92{{movie.poster_path}}" alt="Image not found."/>
+        </ion-avatar>
+          <h2> {{movie.original_title}}</h2>
+          <p> {{movie.overview}}</p>
+      </ion-item>
+    </ion-list>
+
+    <ion-list>
+      <ion-item *ngFor="let movie of movies" (click)="selectMovie($event, movie)">
+        <ion-avatar item-left>
+          <img src="https://image.tmdb.org/t/p/w92{{movie.poster_path}}" alt="Image not found."/>
+        </ion-avatar>
+          <h2> {{movie.original_title}}</h2>
+          <p> {{movie.overview}}</p>
+      </ion-item>
+    </ion-list>
+
+</ion-content>
+
+<ion-footer>
+
+    <ion-segment [(ngModel)]="bottom">
+      <ion-segment-button value="aboutus" style="color: black;" (click)="openAbtUs()">
+        About Us
+      </ion-segment-button>
+
+      <ion-segment-button value="contactus" style="color: black;" (click)="openCntUs()">
+        Contact Us
+      </ion-segment-button>
+    </ion-segment>
+
+</ion-footer>
