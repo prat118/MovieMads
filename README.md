@@ -26,6 +26,10 @@ After adding the plugin, download the plugin specific dependencies using,
   
   $ npm install @ionic-native/network --save
   
+For adding "moment" library, you need to go to the directory where your project resides, and then run the following command,
+
+  $ npm install moment --save
+  
 If done with all the steps mentioned above, you can run the project on browser using
 
   $ ionic serve
